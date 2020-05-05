@@ -27,7 +27,7 @@ const NewPost = () => {
     formData.append("type", postData.type);
     formData.append("photo", postData.photo);
     setIsLoading(true);
-    fetch("/create/", {
+    fetch("https://shrouded-savannah-37285.herokuapp.com/create/", {
       mode: "no-cors",
       method: "POST",
       body: formData,
