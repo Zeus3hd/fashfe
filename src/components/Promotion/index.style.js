@@ -5,54 +5,60 @@ const colors = {
   black: "#22282E",
   blue: "#2777EF",
 };
-const Wrapper = styled.div`
+const Wrapper = styled.div``;
+const ProductContainer = styled.div`
+  display: flex;
+  max-width: 60vw;
+  padding: 2rem;
+  flex-direction: ${({ reversed }) => (reversed ? "row-reverse" : "row")};
+  @media (max-width: 900px) {
+    max-width: 90vw;
+    flex-direction: column;
+  }
+`;
+const ProductImageContainer = styled.div`
+  flex: 1;
+  background: url(${({ bg }) => bg}) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  min-height: 40vh;
+`;
+const ProductDetails = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
-const ProductContainer = styled.div`
+const ProductTitle = styled.p`
+  background: ${colors.crimson};
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 2rem 0;
-  @media (min-width: 1024px) {
-    flex-direction: ${({ reversed }) => (reversed ? "row-reverse" : "row")};
-    align-items: center;
+  align-self: ${({ reversed }) => (reversed ? "flex-end" : "flex-start")};
+  left: ${({ reversed }) => (reversed ? "3rem" : "-3rem")};
+  @media (max-width: 900px) {
+    left: 0;
   }
 `;
-const ProductBackground = styled.img`
-  transform: rotateZ(35deg);
-  box-sizing: border-box;
-  width: 90vw;
-  max-width: 500px;
-`;
-const ProductImage = styled.img`
-  position: absolute;
-  margin: 1rem;
-  box-sizing: border-box;
-  width: 80vw;
-  max-width: 500px;
-`;
-const ProductTextContainer = styled.div`
-  padding: 0 1rem;
-  margin: 0.5rem;
-`;
-const CatchPhrase = styled.p`
-  font-weight: bold;
-  color: ${colors.black};
-  font-size: 4vw;
-`;
 const ProductParagraph = styled.p`
-  color: ${colors.black};
-  font-size: 1rem;
+  background: ${colors.crimson};
+  line-height: 2rem;
+  color: #ffffff;
+  margin-left: 2rem;
+  ${({ reversed }) => (reversed ? "margin-right:2rem;" : "margin-left:2rem")};
+  padding: 0.5rem 1rem;
+  @media (max-width: 900px) {
+    margin: 0;
+  }
 `;
+
 export {
   Wrapper,
   ProductContainer,
-  ProductBackground,
-  ProductImage,
-  ProductTextContainer,
-  CatchPhrase,
+  ProductImageContainer,
+  ProductDetails,
+  ProductTitle,
   ProductParagraph,
 };

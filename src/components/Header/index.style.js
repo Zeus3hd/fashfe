@@ -58,7 +58,7 @@ const ShopButton = styled.button`
 `;
 
 const BackgroundWordsContainer = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   right: 0;
   top: 0;

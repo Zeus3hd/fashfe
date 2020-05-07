@@ -15,7 +15,7 @@ const Store = () => {
   const [data, setData] = useState([]);
   const [activeCategory, setActiveCategory] = useState("all");
   useEffect(() => {
-    fetch("https://shrouded-savannah-37285.herokuapp.com/products")
+    fetch("https://shrouded-savannah-97463.herokuapp.com/products")
       .then((res) => {
         return res.json();
       })
