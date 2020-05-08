@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-
+import axios from "axios";
 import {
   Wrapper,
   InputGroup,
@@ -27,30 +27,26 @@ const NewPost = () => {
     formData.append("type", postData.type);
     formData.append("photo", postData.photo);
     setIsLoading(true);
-    fetch("https://shrouded-savannah-37285.herokuapp.com/create/", {
-      mode: "no-cors",
-      method: "POST",
-      body: formData,
-    }).then(
-      function (res) {
-        if (res.ok) {
-          console.log("done");
-          setIsDone(true);
-          setIsLoading(false);
-        } else if (res.status === 401) {
-          console.log("something went wrong");
-        }
-      },
-      function (e) {
-        console.log("something went wrong", e);
-      }
-    );
+    axios({
+      method: "post",
+      url: "https://shrouded-savannah-97463.herokuapp.com/create",
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
   };
 
   return (
     <>
       {isDone && <Redirect to="/store" />}
-      <Wrapper encType="multipart/form-data" action="">
+      <Wrapper encType="multipart/form-data">
         <InputGroup>
           <InputLabel>Title</InputLabel>
           <InputField
