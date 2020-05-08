@@ -24,7 +24,11 @@ function App() {
           </div>
         </Route>
         <Route exact path="/store" component={Store} />
-        <Route path="/store/1" component={Product} />
+        <Route
+          exact
+          path="/store/:id"
+          render={(props) => <Product {...props} />}
+        />
         <Route path="/new" component={NewPost} />
       </Switch>
       <Footer />

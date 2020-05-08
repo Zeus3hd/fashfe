@@ -16,8 +16,8 @@ const Promotion = () => {
       <ProductContainer>
         <ProductImageContainer bg={dress} />
         <ProductDetails>
-          <ProductTitle>Title here</ProductTitle>
-          <ProductParagraph>
+          <ProductTitle bgColor={"crimson"}>Title here</ProductTitle>
+          <ProductParagraph bgColor={"crimson"}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             suscipit est eget velit scelerisque, nec viverra nisi laoreet.
             Mauris suscipit faucibus mauris vitae faucibus.
@@ -27,8 +27,10 @@ const Promotion = () => {
       <ProductContainer reversed>
         <ProductImageContainer bg={coat} />
         <ProductDetails>
-          <ProductTitle reversed>Title here</ProductTitle>
-          <ProductParagraph reversed>
+          <ProductTitle reversed bgColor={"purple"}>
+            Title here
+          </ProductTitle>
+          <ProductParagraph reversed bgColor={"purple"}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             suscipit est eget velit scelerisque, nec viverra nisi laoreet.
             Mauris suscipit faucibus mauris vitae faucibus.
@@ -38,8 +40,8 @@ const Promotion = () => {
       <ProductContainer>
         <ProductImageContainer bg={abaya} />
         <ProductDetails>
-          <ProductTitle>Title here</ProductTitle>
-          <ProductParagraph>
+          <ProductTitle bgColor={"black"}>Title here</ProductTitle>
+          <ProductParagraph bgColor={"black"}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             suscipit est eget velit scelerisque, nec viverra nisi laoreet.
             Mauris suscipit faucibus mauris vitae faucibus.

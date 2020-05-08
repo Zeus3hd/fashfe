@@ -27,14 +27,15 @@ const BigImage = styled.div`
   width: 50vw;
   height: 50vh;
   transition: 0.4s;
+  min-width: 290px;
 `;
 const Details = styled.div`
   flex: 1;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin: 4vw;
+  width: 70%;
 `;
 
 const TitleContainer = styled.div`

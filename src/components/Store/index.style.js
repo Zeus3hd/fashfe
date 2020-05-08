@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 const colors = {
   crimson: "#D72036",
   purple: "#833895",
@@ -26,7 +27,7 @@ const Gallery = styled.div`
   grid-gap: 2rem;
   padding: 1rem;
 `;
-const Product = styled.div`
+const Product = styled(Link)`
   background: url(${({ bg }) => bg}) no-repeat;
   background-size: cover;
   background-position: center;
@@ -38,6 +39,7 @@ const Product = styled.div`
   justify-content: space-evenly;
   align-items: center;
   color: #fff;
+  text-decoration: none;
   cursor: pointer;
   > * {
     opacity: 0;

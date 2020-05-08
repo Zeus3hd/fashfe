@@ -20,7 +20,7 @@ const Store = () => {
         return res.json();
       })
       .then((snapshot) => {
-        setData(snapshot);
+        return setData(snapshot);
       });
   }, []);
 
@@ -56,7 +56,11 @@ const Store = () => {
         {data.map((item, i) => {
           if (item.type["en-US"] === activeCategory) {
             return (
-              <Product key={i} bg={item.imageurl["en-US"]}>
+              <Product
+                to={`/store/${item.id["en-US"]}`}
+                key={i}
+                bg={item.imageurl["en-US"]}
+              >
                 <ProductTitle>{item.title["en-US"]}</ProductTitle>
                 <ProductPrice>${item.price["en-US"]}</ProductPrice>
                 <ProductSellingPointContainer>
@@ -68,7 +72,11 @@ const Store = () => {
             );
           } else if (activeCategory === "all") {
             return (
-              <Product key={i} bg={item.imageurl["en-US"]}>
+              <Product
+                to={`/store/${item.id["en-US"]}`}
+                key={i}
+                bg={item.imageurl["en-US"]}
+              >
                 <ProductTitle>{item.title["en-US"]}</ProductTitle>
                 <ProductPrice>${item.price["en-US"]}</ProductPrice>
                 <ProductSellingPointContainer>

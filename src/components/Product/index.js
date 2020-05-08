@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Wrapper,
   BigImageContainer,
@@ -11,41 +11,51 @@ import {
   ProductPoints,
   ProductPoint,
   ThumbnailsContainer,
-  Thumbnail,
+  // Thumbnail,
 } from "./index.style";
-import imageOne from "../../img/content/abaya5.jpg";
-import imageTwo from "../../img/content/abaya6.jpg";
-import imageThree from "../../img/content/abaya7.jpg";
-
-const Product = () => {
-  // eslint-disable-next-line
-  const [data, setDate] = useState([imageOne, imageTwo, imageThree]);
+import axios from "axios";
+const Product = (props) => {
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
-  return (
+  useEffect(() => {
+    let param = props.match.params.id;
+    console.log(param);
+    axios
+      .get(`https://shrouded-savannah-97463.herokuapp.com/store/${param}`)
+      .then((res) => {
+        setData(res.data);
+        return setIsLoading(false);
+      })
+      .catch((err) => console.log(err));
+    // fetch(`https://shrouded-savannah-97463.herokuapp.com/store/${param}`)
+    //   .then((res) => res.json())
+    //   .catch((err) => console.log(err));
+  }, []);
+  return isLoading ? (
+    <p>Loading, Please wait ...</p>
+  ) : (
     <Wrapper>
       <BigImageContainer>
-        <BigImage bg={data[activeImage]} />
+        <BigImage bg={data.imageurl["en-US"]} />
       </BigImageContainer>
       <Details>
         <TitleContainer>
-          <Title>TITLE HERE</Title>
-          <Price>$85,85</Price>
+          <Title>{data.title["en-US"]}</Title>
+          <Price>${data.price["en-US"]}</Price>
         </TitleContainer>
-        <DetailsParagraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          sollicitudin dolor eu tincidunt posuereaes putate.
-        </DetailsParagraph>
+        <DetailsParagraph>{data.desc["en-US"]}</DetailsParagraph>
         <ProductPoints>
           <ProductPoint>Point One</ProductPoint>
           <ProductPoint>Point Two</ProductPoint>
           <ProductPoint>Point Three</ProductPoint>
         </ProductPoints>
         <ThumbnailsContainer>
-          {data.map((item, i) => {
-            return (
-              <Thumbnail bg={item} key={i} onClick={() => setActiveImage(i)} />
-            );
-          })}
+          {/* {data.map((item, i) => {
+          return (
+            <Thumbnail bg={item} key={i} onClick={() => setActiveImage(i)} />
+          );
+        })} */}
         </ThumbnailsContainer>
       </Details>
     </Wrapper>

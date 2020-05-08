@@ -31,7 +31,7 @@ const ProductDetails = styled.div`
   align-items: flex-start;
 `;
 const ProductTitle = styled.p`
-  background: ${colors.crimson};
+  background: ${({ bgColor }) => colors[bgColor]};
   font-size: 2rem;
   padding: 0.5rem 1rem;
   color: #ffffff;
@@ -43,7 +43,7 @@ const ProductTitle = styled.p`
   }
 `;
 const ProductParagraph = styled.p`
-  background: ${colors.crimson};
+  background: ${({ bgColor }) => colors[bgColor]};
   line-height: 2rem;
   color: #ffffff;
   margin-left: 2rem;
