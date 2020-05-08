@@ -36,6 +36,9 @@ const NewPost = () => {
       .then(function (response) {
         //handle success
         console.log(response);
+        setIsLoading(false);
+        setIsDone(true);
+        return;
       })
       .catch(function (response) {
         //handle error
