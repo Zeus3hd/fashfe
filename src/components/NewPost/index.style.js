@@ -23,6 +23,12 @@ const InputField = styled.input`
   border: 1px solid ${colors.purple + "55"};
   border-radius: 0.5rem;
 `;
+const SelectField = styled.select`
+  padding: 0.5rem 1rem;
+  border: 1px solid ${colors.purple + "55"};
+  border-radius: 0.5rem;
+  background: #ffffff;
+`;
 const InputLabel = styled.label`
   color: ${colors.purple};
   font-size: 0.9rem;
@@ -38,4 +44,4 @@ const FormButton = styled.button`
   font-weight: bold;
   font-size: 1.2rem;
 `;
-export { Wrapper, InputGroup, InputField, InputLabel, FormButton };
+export { Wrapper, InputGroup, InputField, InputLabel, FormButton, SelectField };

@@ -7,6 +7,7 @@ import {
   InputField,
   InputLabel,
   FormButton,
+  SelectField,
 } from "./index.style";
 const NewPost = () => {
   const [postData, setPostData] = useState({
@@ -76,7 +77,19 @@ const NewPost = () => {
         </InputGroup>
         <InputGroup>
           <InputLabel>Type</InputLabel>
-          <InputField
+          <SelectField
+            onChange={(e) => {
+              setPostData({
+                ...postData,
+                type: e.target.value,
+              });
+            }}
+          >
+            <option value="dress">Dress</option>
+            <option value="coat">Coat</option>
+            <option value="abaya">Abaya</option>
+          </SelectField>
+          {/* <InputField
             type="text"
             onChange={(e) => {
               setPostData({
@@ -84,7 +97,7 @@ const NewPost = () => {
                 type: e.target.value,
               });
             }}
-          />
+          /> */}
         </InputGroup>
         <InputGroup>
           <InputLabel>Image</InputLabel>
