@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 const colors = {
   crimson: "#D72036",
   purple: "#833895",
@@ -29,10 +30,12 @@ const TitleContainer = styled.div`
 const ElegantTitle = styled.p`
   margin: 0.5rem;
   color: ${colors.purple};
+  text-shadow: 0px 0px 2px ${colors.purple};
 `;
 const LadyTitle = styled.p`
   margin: 0.5rem;
   color: ${colors.crimson};
+  text-shadow: 0px 0px 2px ${colors.crimson};
 `;
 const HeaderParagraphContainer = styled.div`
   padding: 2rem;
@@ -45,13 +48,14 @@ const HeaderParagraph = styled.p`
   color: ${colors.black};
 `;
 
-const ShopButton = styled.button`
+const ShopButton = styled(Link)`
   align-self: center;
   padding: 0.5rem 1rem;
   background: ${colors.black};
   border: none;
   color: #fff;
-  font-weight: lighter;
+  font-weight: normal;
+  text-decoration: none;
   @media (min-width: 1024px) {
     align-self: flex-start;
   }

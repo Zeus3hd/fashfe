@@ -29,7 +29,7 @@ const Header = () => {
         <HeaderParagraph>
           accumsan, velit sed sagittis vestibulum, justo tellus aliquet neque.
         </HeaderParagraph>
-        <ShopButton>SHOP NOW</ShopButton>
+        <ShopButton to="/store">SHOP NOW</ShopButton>
       </HeaderParagraphContainer>
     </Wrapper>
   );

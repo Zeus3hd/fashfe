@@ -36,12 +36,12 @@ const Navbar = () => {
           Store
         </MenuLink>
         <MenuLink
-          to="/contact"
+          to="/new"
           bottom="60%"
           left="30%"
           istoggled={toggleMenu ? true : undefined}
         >
-          Contact
+          New
         </MenuLink>
       </MenuButtonContainer>
       <DesktopNav>
@@ -52,7 +52,7 @@ const Navbar = () => {
           <Link to="/store">Store</Link>
         </DesktopNavLink>
         <DesktopNavLink>
-          <Link to="/contact">Contact</Link>
+          <Link to="/new">New</Link>
         </DesktopNavLink>
       </DesktopNav>
     </Wrapper>
